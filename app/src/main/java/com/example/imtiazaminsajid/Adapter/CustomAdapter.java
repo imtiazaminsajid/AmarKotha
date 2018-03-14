@@ -21,6 +21,7 @@ import java.util.List;
 public class CustomAdapter extends BaseAdapter{
 
     List<ChatModels> list_chat_models;
+
     Context context;
     LayoutInflater layoutInflater;
 
@@ -59,8 +60,8 @@ public class CustomAdapter extends BaseAdapter{
                 v = layoutInflater.inflate(R.layout.list_item_message_receiver,null);
 
             BubbleTextView  bubbleTextView = (BubbleTextView)v.findViewById(R.id.text_message);
-            CollationElementIterator text_message = null;
-            text_message.setText(list_chat_models.get(i).message);
+
+            bubbleTextView.setText(list_chat_models.get(i).message);
         }
         return v;
     }
