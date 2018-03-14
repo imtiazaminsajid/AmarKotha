@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(List<ChatModels>[] lists) {
-            String url = String.format("http://sandbox.api.simsimi.com/request.p?key=your_trial_key&lc=en&ft=1.0&text=hi", getString(R.string.simsimi_api),text);
+            String url = String.format("http://sandbox.api.simsimi.com/request.p", getString(R.string.simsimi_api),text);
 
             models = lists[0];
             HttpDataHandler httpDataHandler = new HttpDataHandler();
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             Gson gson = new Gson();
             SimsimiModels response =  gson.fromJson(s, SimsimiModels.class);
 
-            ChatModels chatModels = new ChatModels(response.getResponse(),false);
+            ChatModels chatModels = new ChatModels(response.getResponse(), false);
             models.add(chatModels);
             CustomAdapter adapter = new CustomAdapter(models,getApplicationContext());
             listView.setAdapter(adapter);
