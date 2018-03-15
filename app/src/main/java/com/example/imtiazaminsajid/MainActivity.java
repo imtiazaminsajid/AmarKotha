@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 list_chat.add(model);
                 new SimsimiAPI().execute(list_chat);
 
-                editText.setText(" ");
+                editText.setText("");
 
             }
         });
